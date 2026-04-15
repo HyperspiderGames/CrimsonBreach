@@ -1,0 +1,111 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq2sgjoy31eqs"]
+
+[ext_resource type="AudioStream" uid="uid://8yqbtvu0axuu" path="res://sounds/CrimsonBreachTheme.wav" id="1_5mbse"]
+
+[sub_resource type="GDScript" id="GDScript_7q3kq"]
+resource_name = "main_menu"
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func _on_button_button_down() -> void:
+	get_tree().change_scene_to_file(\"res://scenes/level1.tscn\")
+	pass # Replace with function body.
+
+
+func _on_button_4_button_down() -> void:
+	get_tree().quit()
+	pass # Replace with function body.
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_7q3kq"]
+font_size = 50
+
+[node name="Mainmenu" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = SubResource("GDScript_7q3kq")
+
+[node name="Title" type="Label" parent="Control"]
+layout_mode = 1
+offset_left = 55.0
+offset_top = 50.0
+offset_right = 494.0
+offset_bottom = 119.0
+text = "CRIMSON BREACH"
+label_settings = SubResource("LabelSettings_7q3kq")
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.372
+anchor_right = 0.46500003
+anchor_bottom = 0.49500003
+offset_top = -8.056
+offset_right = 0.3199463
+offset_bottom = 0.23999023
+grow_vertical = 2
+text = "New Game"
+
+[node name="Button2" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.535
+anchor_top = 0.36
+anchor_right = 1.0
+anchor_bottom = 0.49500003
+offset_left = -0.32000732
+offset_top = -0.28001404
+offset_bottom = 0.23999023
+text = "Options"
+
+[node name="Button3" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.60800004
+anchor_right = 0.46500003
+anchor_bottom = 0.744
+offset_top = 0.015960693
+offset_right = 0.3199463
+offset_bottom = -0.11199951
+text = "Load Game"
+
+[node name="Button4" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.535
+anchor_top = 0.60800004
+anchor_right = 1.0
+anchor_bottom = 0.744
+offset_left = -0.32000732
+offset_top = 0.015960693
+offset_bottom = -0.11199951
+grow_horizontal = 2
+grow_vertical = 2
+text = "Quit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Control"]
+position = Vector2(578, 353)
+stream = ExtResource("1_5mbse")
+volume_db = 9.394
+autoplay = true
+max_distance = 4096.0
+
+[connection signal="button_down" from="Control/Button" to="Control" method="_on_button_button_down"]
+[connection signal="button_down" from="Control/Button4" to="Control" method="_on_button_4_button_down"]

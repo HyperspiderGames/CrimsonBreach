@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://le307tftnpvh"
+path="res://.godot/imported/Down to the Open Streets.wav-cff693d22fee603055ce9c580e8f9f27.sample"
+
+[deps]
+
+source_file="res://sounds/Down to the Open Streets.wav"
+dest_files=["res://.godot/imported/Down to the Open Streets.wav-cff693d22fee603055ce9c580e8f9f27.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
